@@ -4,7 +4,6 @@ import * as yaml from 'js-yaml';
 import JsonToTS from 'json-to-ts';
 
 const apiUrl = 'https://dev-zion-api.devastation.ru/schema/';
-const outputFilePath = 'allTypes.ts';
 const outputFilePathSchemaService = 'schemaService.yaml';
 const outputFilePathSchemaServiceJson = 'schemaService.json';
 
@@ -42,12 +41,9 @@ axios.get<ApiResponse>(apiUrl)
         const exportedTypeInterfaces = typeInterfaces.map(typeInterface => `export ${typeInterface}`);
         const allTypesContent = exportedTypeInterfaces.join('\n\n');
 
-        // Write the outputs to respective files
-        fs.writeFileSync(outputFilePath, allTypesContent);
         fs.writeFileSync(outputFilePathSchemaService, schemasYamlString);
         fs.writeFileSync(outputFilePathSchemaServiceJson, schemasJsonString);
 
-        console.log(`All types have been saved to ${outputFilePath}`);
         console.log(`Schema YAML has been saved to ${outputFilePathSchemaService}`);
         console.log(`Schema JSON has been saved to ${outputFilePathSchemaServiceJson}`);
     })
