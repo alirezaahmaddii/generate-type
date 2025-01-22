@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "start": "ts-node test.ts",
+    "download-and-generate": "ts-node downloadSwagger && ts-node generateTypes",
     "generate-model": "ts-node downloadSwagger.ts",
     "lint": "eslint .",
     "preview": "vite preview"
