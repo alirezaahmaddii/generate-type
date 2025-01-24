@@ -1,27 +1,45 @@
 This repo for generate type of Schema swagger
+You should first run these command for show example
 
-run this command for use swagger-typescript-api
-
-```js
-npm run start-swagger-typescript-api
-```
-
-run this command download and generate
+run this command for use swagger-typescript-api with fetch
 
 ```js
-npm run download-and-generate
+npm run start-swagger-typescript-api-with-fetch
 ```
-
-if you want to run separate files
-
-first run 
+run this command for use swagger-typescript-api with axios 
 
 ```js
-ts-node downloadSwagger
+npm run start-swagger-typescript-api-with-axios
 ```
 
-Second run
+[//]: # (run this command download and generate)
 
-```js
-ts-node generateTypes
-```
+[//]: # ()
+[//]: # (```js)
+
+[//]: # (npm run download-and-generate)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (if you want to run separate files)
+
+[//]: # ()
+[//]: # (first run )
+
+[//]: # ()
+[//]: # (```js)
+
+[//]: # (ts-node downloadSwagger)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (Second run)
+
+[//]: # ()
+[//]: # (```js)
+
+[//]: # (ts-node generateTypes)
+
+[//]: # (```)
