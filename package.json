@@ -7,7 +7,8 @@
     "build": "tsc -b && vite build",
     "start": "ts-node test.ts",
     "download-and-generate": "ts-node downloadSwagger && ts-node generateTypes",
-    "start-swagger-typescript-api": "npx swagger-typescript-api -p https://dev-i.layer.cafe/schema/ -o ./src/api",
+    "generate-service-with-axios": "npx swagger-typescript-api --axios -p https://dev-i.layer.cafe/schema/ -o ./src/api && ts-node generateApiInstance",
+    "start-swagger-typescript-api-with-fetch": "npx swagger-typescript-api -p https://dev-i.layer.cafe/schema/ -o ./src/api",
     "generate-model": "ts-node downloadSwagger.ts",
     "lint": "eslint .",
     "preview": "vite preview"
