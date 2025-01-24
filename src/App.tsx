@@ -1,10 +1,34 @@
-import {useState} from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import { apiInstance } from './api/apiInstance.ts';
 import './App.css';
 
 function App() {
     const [count, setCount] = useState(0);
+    const [comments, setComments] = useState<any[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const fetchComments = async () => {
+        setLoading(true);
+        setError(null);
+        try {
+            const response:any = await apiInstance.api.apiLayersCommentsList('123');
+            setComments(response.data);
+        } catch (err: any) {
+            setError(err.message || 'Error occurred while fetching comments.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchComments();
+        console.log("Hello");
+        console.log(error);
+        console.log(loading);
+        console.log(comments)
+    }, []);
 
     return (
         <>
